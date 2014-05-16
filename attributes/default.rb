@@ -47,3 +47,5 @@ node.default['ice']['public_hostname']                      = nil
 node.default['ice']['nginx_port']                           = 80
 node.default['ice']['nginx_config']                         = 'nginx_ice_site.erb'
 node.default['ice']['nginx_config_cookbook']                = 'ice'
+
+node.default['nginx']['default_site_enabled']               = false

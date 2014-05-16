@@ -100,7 +100,10 @@ if node['ice']['reader']['enabled'] == true
   end
   
   # Disable default site first
-  nginx_site 'default', :enable => false
+  node.set['nginx']['default_site_enabled'] = false
+  nginx_site 'default' do
+    enable false
+  end
 
   # Generate nginx ice site
   template "#{node['nginx']['dir']}/sites-available/ice" do
